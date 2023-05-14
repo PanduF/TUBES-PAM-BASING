@@ -28,7 +28,7 @@ const DressItem = ({ item }) => {
     <View>
       <TouchableOpacity
         style={{
-          backgroundColor: "#f8f8f8",
+          backgroundColor: "#F7E0F6",
           borderRadius: 10,
           padding: 10,
           flexDirection: "row",
@@ -55,7 +55,7 @@ const DressItem = ({ item }) => {
             {item.name}
           </Text>
           <Text style={{ width: 60, color: "gray", fontSize: 15 }}>
-            ₹{item.price}
+            Rp.{item.price}
           </Text>
         </View>
         {cart.some((c) => c.id === item.id) ? (
@@ -146,11 +146,11 @@ const DressItem = ({ item }) => {
                 color: "#088F8F",
                 textAlign: "center",
                 padding: 5,
-                fontSize: 17,
+                fontSize: 10,
                 fontWeight: "bold",
               }}
             >
-              Add
+              Tambahkan
             </Text>
           </Pressable>
         )}

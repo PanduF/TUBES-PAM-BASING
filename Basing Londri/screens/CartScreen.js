@@ -88,7 +88,7 @@ const CartScreen = () => {
                 style={{ marginTop: 20 }}
               />
               <Text style={{ marginTop: 17, marginHorizontal: 4 }}>
-                Your Bucket
+                Nota
               </Text>
             </View>
             <Pressable
@@ -311,7 +311,7 @@ const CartScreen = () => {
                   <Text
                     style={{ fontSize: 18, fontWeight: "500", color: "gray" }}
                   >
-                    Waktu Pengambilan
+                    Pilihan Pengiriman
                   </Text>
 
                   <Text

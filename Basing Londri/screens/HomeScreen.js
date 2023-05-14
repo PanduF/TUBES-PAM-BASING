@@ -106,59 +106,68 @@ const HomeScreen = () => {
   const services = [
     {
       id: "0",
-      image: "https://cdn-icons-png.flaticon.com/128/4643/4643574.png",
-      name: "Kemeja",
+      image: "https://cdn-icons-png.flaticon.com/128/3003/3003984.png",
+      name: "Cuci & Setrika /Kg",
       quantity: 0,
       price: 5000,
     },
     {
       id: "11",
-      image: "https://cdn-icons-png.flaticon.com/128/892/892458.png",
-      name: "Kaos",
+      image: "https://cdn-icons-png.flaticon.com/128/2975/2975175.png",
+      name: "Cuci Aja /Kg",
       quantity: 0,
-      price: 5000,
+      price: 3500,
     },
     {
       id: "12",
-      image: "https://cdn-icons-png.flaticon.com/128/9609/9609161.png",
-      name: "Gaun",
+      image: "https://cdn-icons-png.flaticon.com/128/9753/9753675.png",
+      name: "Setrika Aja /Kg",
       quantity: 0,
-      price: 5000,
+      price: 3500,
     },
-    {
+   
+   
+
+  ];
+          <View>
+            <Text style = {{ fontWeight : "bold" , fontSize : 18 , marginBottom: 7}}>Daftar Paketan</Text>
+          </View>
+     const services1 = [
+     ,{
       id: "13",
-      image: "https://cdn-icons-png.flaticon.com/128/599/599388.png",
-      name: "celana Jeans",
+      image: "https://cdn-icons-png.flaticon.com/128/4643/4643574.png",
+      name: "Kemeja /Pcs",
       quantity: 0,
-      price: 5000,
+      price: 4000,
     },
     {
       id: "14",
-      image: "https://cdn-icons-png.flaticon.com/128/9431/9431166.png",
-      name: "Sweater",
+      image: "https://cdn-icons-png.flaticon.com/128/892/892458.png",
+      name: "Kaos /Pcs",
       quantity: 0,
-      price: 5000,
+      price: 3000,
     },
     {
       id: "15",
-      image: "https://cdn-icons-png.flaticon.com/128/3345/3345397.png",
-      name: "Celana pendek",
+      image: "https://cdn-icons-png.flaticon.com/128/9609/9609161.png",
+      name: "Gaun /Pcs",
       quantity: 0,
-      price: 5000,
+      price: 10000,
     },
     {
       id: "16",
-      image: "https://cdn-icons-png.flaticon.com/128/293/293241.png",
-      name: "Kaos oblong",
+      image: "https://cdn-icons-png.flaticon.com/128/599/599388.png",
+      name: "Celana Jeans /Pcs",
       quantity: 0,
-      price: 5000,
+      price: 8000,
     },
   ];
+  
 
   return (
     <>
       <ScrollView
-        style={{ backgroundColor: "#e7e7e8", flex: 1, marginTop: 15 }}
+        style={{ backgroundColor: "#EFC7F3", flex: 1, marginTop: 15 }}
       >
         <View
           style={{ padding: 10, flexDirection: "row", alignItems: "center" }}
@@ -203,11 +212,25 @@ const HomeScreen = () => {
         {/* services  */}
         <Services />
 
-        {/* Render all the products  */}
+
+        {/* Render all the products1  */}
+          <View>
+            <Text style = {{ fontWeight : "bold" , fontSize : 18 , marginBottom: 7}}>Daftar Paketan</Text>
+          </View>
 
         {product.map((item, index) => (
           <DressItem item={item} key={index} />
         ))}
+
+         {/* Render all the products1  */}
+          <View>
+            <Text style = {{ fontWeight : "bold" , fontSize : 18 , marginBottom: 7}}>Daftar Satuan</Text>
+          </View>
+        
+        {product.map((item, services1) => (
+          <DressItem item={item} key={services1} />
+        ))}
+
       </ScrollView>
       {total === 0 ? null : (
         <Pressable
