@@ -4,9 +4,8 @@ import { SliderBox } from "react-native-image-slider-box";
 
 const Carousel = () => {
   const images = [
-    "https://media.istockphoto.com/id/1247884083/vector/laundry-service-room-vector-illustration-washing-and-drying-machines-with-cleansers-on-shelf.jpg?s=612x612&w=0&k=20&c=myaNEKlqX7R--bzWGDoMI7PhdxG_zdQTKYEBlymJQGk=",
-    "https://images.pexels.com/photos/5591581/pexels-photo-5591581.jpeg?auto=compress&cs=tinysrgb&w=800",
-  ];
+    "https://accurate.id/wp-content/uploads/2022/08/accurate.id-Berbagai-Perlengkapan-Laundry-yang-Harus-Dipersiapkan.jpg",
+    "https://lokalsupportlokal.id/wp-content/uploads/2020/11/usaha-laundry-kiloan-untuk-pemula-usaha-laundry-kiloan-di-rumah-usaha-laundry-kiloan-dengan-modal-kecil-usaha-laundry-kiloan-franchise-626x385.jpg",  ];
   return (
     <View>
       <SliderBox

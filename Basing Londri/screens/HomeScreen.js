@@ -16,9 +16,11 @@ import { Feather } from "@expo/vector-icons";
 import Carousel from "../components/Carousel";
 import Services from "../components/Services";
 import DressItem from "../components/DressItem";
+import img from "../assets/bs.png"
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../ProductReducer";
 import { useNavigation } from "@react-navigation/native";
+
 
 const HomeScreen = () => {
   const cart = useSelector((state) => state.cart.cart);
@@ -106,21 +108,21 @@ const HomeScreen = () => {
   const services = [
     {
       id: "0",
-      image: "https://cdn-icons-png.flaticon.com/128/3003/3003984.png",
+      image: "https://img.freepik.com/premium-vector/laundry-illustration_75802-67.jpg?w=2000",
       name: "Cuci & Setrika /Kg",
       quantity: 0,
       price: 5000,
     },
     {
       id: "11",
-      image: "https://cdn-icons-png.flaticon.com/128/2975/2975175.png",
+      image: "https://cdn-icons-png.flaticon.com/512/1216/1216449.png",
       name: "Cuci Aja /Kg",
       quantity: 0,
       price: 3500,
     },
     {
       id: "12",
-      image: "https://cdn-icons-png.flaticon.com/128/9753/9753675.png",
+      image: "https://cdn-icons-png.flaticon.com/512/4737/4737778.png",
       name: "Setrika Aja /Kg",
       quantity: 0,
       price: 3500,
@@ -132,37 +134,8 @@ const HomeScreen = () => {
           <View>
             <Text style = {{ fontWeight : "bold" , fontSize : 18 , marginBottom: 7}}>Daftar Paketan</Text>
           </View>
-     const services1 = [
-     ,{
-      id: "13",
-      image: "https://cdn-icons-png.flaticon.com/128/4643/4643574.png",
-      name: "Kemeja /Pcs",
-      quantity: 0,
-      price: 4000,
-    },
-    {
-      id: "14",
-      image: "https://cdn-icons-png.flaticon.com/128/892/892458.png",
-      name: "Kaos /Pcs",
-      quantity: 0,
-      price: 3000,
-    },
-    {
-      id: "15",
-      image: "https://cdn-icons-png.flaticon.com/128/9609/9609161.png",
-      name: "Gaun /Pcs",
-      quantity: 0,
-      price: 10000,
-    },
-    {
-      id: "16",
-      image: "https://cdn-icons-png.flaticon.com/128/599/599388.png",
-      name: "Celana Jeans /Pcs",
-      quantity: 0,
-      price: 8000,
-    },
-  ];
-  
+
+
 
   return (
     <>
@@ -172,7 +145,7 @@ const HomeScreen = () => {
         <View
           style={{ padding: 10, flexDirection: "row", alignItems: "center" }}
         >
-          <MaterialIcons name="location-on" size={36} color="#fd5c63" />
+          <Image source={img} style={{ width: 70, height: 70}} /> 
           <View>
             <Text style={styles.title}>Home</Text>
             <Text>{displayCurrentAddress}</Text>
@@ -182,7 +155,7 @@ const HomeScreen = () => {
             <Image
               style={{ width: 40, height: 40, borderRadius: 20 }}
               source={{
-                uri: "https://yt3.ggpht.com/yti/AHXOFjUH1nl7-b4NBmKCXInL-Dz1zHG3C_xMThCa5w3u=s88-c-k-c0x00ffffff-no-rj-mo",
+                uri: "https://asset-a.grid.id/crop/0x0:1186x951/x/photo/2022/06/10/webpnet-resizeimage-2022-06-0-20220610121849.jpg",
               }}
             />
           </Pressable>
@@ -209,8 +182,7 @@ const HomeScreen = () => {
         {/* Image  Carousel  */}
         <Carousel />
 
-        {/* services  */}
-        <Services />
+      
 
 
         {/* Render all the products1  */}
@@ -220,15 +192,6 @@ const HomeScreen = () => {
 
         {product.map((item, index) => (
           <DressItem item={item} key={index} />
-        ))}
-
-         {/* Render all the products1  */}
-          <View>
-            <Text style = {{ fontWeight : "bold" , fontSize : 18 , marginBottom: 7}}>Daftar Satuan</Text>
-          </View>
-        
-        {product.map((item, services1) => (
-          <DressItem item={item} key={services1} />
         ))}
 
       </ScrollView>

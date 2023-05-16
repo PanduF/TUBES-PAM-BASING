@@ -140,7 +140,7 @@ const RegisterScreen = () => {
             onPress={register}
             style={{
               width: 200,
-              backgroundColor: "#318CE7",
+              backgroundColor: "#EFC7F3",
               padding: 15,
               borderRadius: 8,
               marginTop: 50,
@@ -148,7 +148,7 @@ const RegisterScreen = () => {
               marginRight: "auto",
             }}
           >
-            <Text style={{ fontSize: 18, textAlign: "center", color: "white" }}>
+            <Text style={{ fontSize: 18, textAlign: "center", color: "black" }}>
               Register
             </Text>
           </TouchableOpacity>

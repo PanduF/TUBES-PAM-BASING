@@ -7,12 +7,15 @@ import { useNavigation } from "@react-navigation/native";
 const OrderScreen = () => { 
     const navigation = useNavigation();
   return (
-    <SafeAreaView>
-
+    <SafeAreaView 
+    style={{
+      backgroundColor: "#EFC7F3",
+    }}>
+      
       <Image style={{
         height : 360,
         width : 300 ,
-        marginLeft : 49,
+        marginLeft : 30,
         marginTop : 80
       }} source={img}/>
       <Text

@@ -8,7 +8,8 @@ import {
   ScrollView,
   Alert ,
 } from "react-native";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import * as Location from "expo-location";
 import HorizontalDatepicker from "@awrminkhodaei/react-native-horizontal-datepicker";
 
 import { useSelector } from "react-redux";
@@ -52,6 +53,74 @@ const PickUpScreen = () => {
   var endDateStr = endYear + "-" + endmonth + "-" + endDay;
   var finalEndDate = String(endDateStr).trim();
 
+  const navigation = useNavigation();
+  const [displayCurrentAddress, setdisplayCurrentAddress] = useState(
+    "We are Loading Your Location..."
+  );
+  const [locationServicesEnabled, setlocationServicesEnabled] = useState(false);
+
+  useEffect(() => {
+    checkIfLocationEnabled();
+    getCurrentLocation();
+  }, []);
+
+  const checkIfLocationEnabled = async () => {
+    let enabled = await Location.hasServicesEnabledAsync();
+    if (!enabled) {
+      Alert.alert(
+        "Location Services are not Enabled ",
+        "Please enable the location Services ",
+        [
+          {
+            text: "Cancel",
+            onPress: () => console.log("Cancel Pressed"),
+            style: "cancel",
+          },
+          { text: "OK", onPress: () => console.log("OK Pressed") },
+        ]
+      );
+    } else {
+      setlocationServicesEnabled(enabled);
+    }
+  };
+
+  const getCurrentLocation = async () => {
+    let { status } = await Location.requestForegroundPermissionsAsync();
+    if (status !== "granted") {
+      Alert.alert(
+        "Permission denied ",
+        "Allow the app to use the Location services  ",
+        [
+          {
+            text: "Cancel",
+            onPress: () => console.log("Cancel Pressed"),
+            style: "cancel",
+          },
+          { text: "OK", onPress: () => console.log("OK Pressed") },
+        ]
+      );
+    }
+
+    const { coords } = await Location.getCurrentPositionAsync();
+
+    if (coords) {
+      const { latitude, longitude } = coords;
+      // console.log(coords)
+      let response = await Location.reverseGeocodeAsync({
+        latitude,
+        longitude,
+      });
+    
+      // console.log(response)
+
+      for (let item of response) {
+        let address = `${item.name} ${item.city} ${item.postalCode}`;
+        setdisplayCurrentAddress(address);
+      }
+    }
+  };
+      
+
   const deliveryTime = [
     {
       id: "0",
@@ -86,7 +155,7 @@ const PickUpScreen = () => {
     },
   ];
 
-  const navigation = useNavigation();
+  
 
   const proceedToCart = () => {
     if( !selectedDate || !selectedTime || !Delivery){
@@ -117,7 +186,7 @@ const PickUpScreen = () => {
     <>
     
     <SafeAreaView
-      style={{ backgroundColor: "#e7e7e8", flex: 1, marginTop: 22 }}
+      style={{ backgroundColor: "#F7E0F6", flex: 1, marginTop: 22 }}
     >
       <Text
         style={{
@@ -129,16 +198,16 @@ const PickUpScreen = () => {
       >
         Masukan alamat
       </Text>
-      <TextInput
+      <Text 
+      
         style={{
-          margin: 12,
-          padding: 28,
-          borderColor: "gray",
-          borderWidth: 0.7,
-          paddingVertical: 60,
-          borderRadius: 9,
-        }}
-      />
+          backgroundColor: "#fce5cd",
+          fontSize: 20,
+          fontWeight: "500",
+          marginHorizontal: 17,
+          marginVertical: 12,
+        }}>{displayCurrentAddress}</Text>
+
       <View>
         <Text
           style={{
@@ -148,7 +217,7 @@ const PickUpScreen = () => {
             marginVertical: 12,
           }}
         >
-          PickUp Date
+          Tanggal Pengiriman
         </Text>
 
         <HorizontalDatepicker

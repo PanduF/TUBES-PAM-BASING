@@ -71,11 +71,11 @@ const LoginScreen = () => {
                 marginTop: 100,
               }}
             >
-              <Text style={{ fontSize: 20, color: "#662d91", fontWeight: "bold" }}>
+              <Text style={{ fontSize: 20, color: "#020202", fontWeight: "bold" }}>
                 Sign In{" "}
               </Text>
               <Text style={{ fontSize: 18, marginTop: 8, fontWeight: "600" }}>
-                Sign In to your Account
+                For Driver Accounts
               </Text>
             </View>
             <View style={{ marginTop: 50 }}>
@@ -123,7 +123,7 @@ const LoginScreen = () => {
                 onPress={login}
                 style={{
                   width: 200,
-                  backgroundColor: "#318CE7",
+                  backgroundColor: "#EFC7F3",
                   padding: 15,
                   borderRadius: 8,
                   marginTop: 50,
@@ -131,8 +131,8 @@ const LoginScreen = () => {
                   marginRight: "auto",
                 }}
               >
-                <Text style={{ fontSize: 18, textAlign: "center", color: "white" }}>
-                  Login
+                <Text style={{ fontSize: 18, textAlign: "center", color: "black" }}>
+                  Sign In
                 </Text>
               </TouchableOpacity>
     

@@ -52,7 +52,7 @@ const CartScreen = () => {
     <>
       <ScrollView
         style={{
-          backgroundColor: "#e7e7e8",
+          backgroundColor: "#EFC7F3",
           flex: 1,
           marginTop: 22,
           padding: 8,
@@ -68,7 +68,7 @@ const CartScreen = () => {
               style={{ marginTop: 20 }}
             />
             <View style={{ justifyContent: "center", alignItems: "center" }}>
-              <Text style={{ marginTop: 40 }}>Your Cart is Empty</Text>
+              <Text style={{ marginTop: 40 }}>Nota kamu kosong</Text>
             </View>
           </>
         ) : (
